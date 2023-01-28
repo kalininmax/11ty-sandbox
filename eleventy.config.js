@@ -85,16 +85,6 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.ignores.add('src/components');
 	eleventyConfig.addPassthroughCopy('src/assets/fonts');
 
-	// eleventyConfig.setBrowserSyncConfig({
-	// 	files: [
-	// 		'build/assets/styles/**/*.css',
-	// 		'build/**/*.html',
-	// 		'build/assets/images/*.avif',
-	// 		'build/assets/js/*.js',
-	// 	],
-	// 	open: false,
-	// });
-
 	eleventyConfig.addNunjucksShortcode('image', imageShortcode);
 	eleventyConfig.addNunjucksShortcode('svg_sprite', inlineSvgSprite);
 	eleventyConfig.addNunjucksAsyncFilter('inline', inline);

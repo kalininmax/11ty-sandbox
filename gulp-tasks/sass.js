@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const plumber = require('gulp-plumber');
-const sass = require('gulp-sass')(require('sass'));
+const sassHandler = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const assets = require('postcss-assets');
@@ -34,7 +34,7 @@ const postcssPlugins = [
 	autoprefixer()
 ].filter((value) => value);
 
-module.exports = function styles() {
+module.exports = function sass() {
 	return gulp
 		.src(PATHS.src.styles)
 		.pipe(
@@ -49,7 +49,7 @@ module.exports = function styles() {
 			})
 		)
 		.pipe(gulpif(!IS_PRODUCTION, sourcemaps.init()))
-		.pipe(sass(sassOptions))
+		.pipe(sassHandler(sassOptions))
 		.pipe(postcss(postcssPlugins))
 		.pipe(gulpif(!IS_PRODUCTION, sourcemaps.write()))
 		.pipe(gulp.dest(PATHS.build.styles));

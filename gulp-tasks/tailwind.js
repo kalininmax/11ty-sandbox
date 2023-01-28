@@ -10,11 +10,6 @@ const colors = require('ansi-colors');
 const PATHS = require('../paths');
 const { IS_PRODUCTION } = require('../env');
 
-const postcssPlugins = [
-	IS_PRODUCTION && csso({ restructure: false })
-]
-	.filter((value) => value);
-
 module.exports = function tailwind() {
 	return gulp
 		.src(PATHS.src.tailwind)
@@ -27,6 +22,7 @@ module.exports = function tailwind() {
 				});
 			},
 		}))
-		.pipe(postcss(postcssPlugins))
+		.pipe(postcss())
+		.pipe(gulpif(IS_PRODUCTION, postcss(csso({ restructure: false }))))
 		.pipe(gulp.dest(PATHS.build.styles));
 };

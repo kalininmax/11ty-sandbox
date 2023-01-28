@@ -1,0 +1,13 @@
+---
+layout: home.njk
+title: Home
+---
+
+{% from "../components/button.njk" import button %}
+
+<div class="container">
+	<h1>Index page</h1>
+	<p class="font-bold py-1 px-2">Lorem ipsum dolor sit amet.</p>
+	{{ button({ text: 'Send', className: '_submit' }) }}
+	{{ button({ text: 'Reset', className: '_reset' }) }}
+</div>

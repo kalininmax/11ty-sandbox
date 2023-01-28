@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" class="page{% if templateClass %} {{ templateClass }}{% endif %}">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>{% if title %}{{ title }} |{% endif %}{{ site.title }}</title>
+		<meta name="description" content="{{ site.description }}"/>
+		<link rel="stylesheet" href="{{ '/assets/styles/tailwind.css' | url }}"/>
+		<link rel="stylesheet" href="{{ '/assets/styles/index.css' | url }}"/>
+		<style>
+			img,
+			video,
+			iframe {
+				max-inline-size: 100%;
+				block-size: auto;
+			}
+		</style>
+	</head>
+	<body class="flex flex-grow">
+		{% svg_sprite %}
+
+		{{ content | safe }}
+
+		<script src="{{ '/assets/js/bundle.js' | url }}"></script>
+	</body>
+</html>

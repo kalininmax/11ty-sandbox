@@ -13,9 +13,9 @@ module.exports = {
 		images: 'src/assets/images/',
 		imagesInline: 'src/assets/images/inline',
 		svg: 'src/assets/images/svg/**/*.svg',
+		components: 'src/components',
 		js: 'src/assets/js/',
-		jsEntryPoint: 'src/assets/js/index.js',
-		components: 'src/components'
+		jsEntryPoint: 'src/assets/js/index.js'
 	},
 	watch: {
 		styles: 'src/assets/styles/**/*.{sass,scss}',

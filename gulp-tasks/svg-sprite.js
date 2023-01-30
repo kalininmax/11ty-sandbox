@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const rename = require('gulp-rename');
 const svgSprite = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
-const inlineSvgSprite = require('gulp-cheerio');
+const editSVG = require('gulp-cheerio');
 
 const svgoPluginsList = require('./svgmin-plugins-list');
 const PATHS = require('../paths');
@@ -31,8 +31,10 @@ module.exports = function svg() {
 		}))
 		.pipe(rename({ prefix: 'icon-' }))
 		.pipe(svgSprite({ inlineSvg: true }))
-		.pipe(inlineSvgSprite({
-			run: $ => { $('svg').attr('style', 'display:none') },
+		.pipe(editSVG({
+			run: $ => {
+				$('svg').attr('style', 'display:none');
+			},
 			parserOptions: { xmlMode: true }
 		}))
 		.pipe(rename('sprite.svg'))

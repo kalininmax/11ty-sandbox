@@ -7,7 +7,7 @@
 		"build": "npx @11ty/eleventy",
 		"clean": "rimraf build/",
 		"gulp:styles": "gulp styles",
-		"gulp:svg": "gulp svg",
+		"gulp:svg": "gulp svgSprite",
 		"dev:gulp": "gulp dev",
 		"dev:eleventy": "npx @11ty/eleventy --serve",
 		"dev:webpack": "webpack --watch"

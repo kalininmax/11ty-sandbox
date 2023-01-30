@@ -1,10 +1,10 @@
 const gulp = require('gulp');
-const svg = require('./gulp-tasks/svg');
+const svgSprite = require('./gulp-tasks/svg-sprite');
 const sass = require('./gulp-tasks/sass');
 const tailwind = require('./gulp-tasks/tailwind');
 const watch = require('./gulp-tasks/watch')
 
-gulp.task('svg', svg);
+gulp.task('svgSprite', svgSprite);
 
 gulp.task('styles', gulp.parallel(sass, tailwind));
 

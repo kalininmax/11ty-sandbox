@@ -7,13 +7,15 @@ module.exports = {
 		js: 'build/assets/js/'
 	},
 	src: {
+		fonts: 'src/assets/fonts',
 		styles: 'src/assets/styles/index.scss',
 		tailwind: 'src/assets/styles/tailwind.css',
 		images: 'src/assets/images/',
 		imagesInline: 'src/assets/images/inline',
 		svg: 'src/assets/images/svg/**/*.svg',
 		js: 'src/assets/js/',
-		jsEntryPoint: 'src/assets/js/index.js'
+		jsEntryPoint: 'src/assets/js/index.js',
+		components: 'src/components'
 	},
 	watch: {
 		styles: 'src/assets/styles/**/*.{sass,scss}',

@@ -13,12 +13,13 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addNunjucksAsyncFilter('inline', inline);
 
 	eleventyConfig.setServerOptions({
-    liveReload: true,
-    domDiff: true,
-    port: 8080,
+    encoding: 'utf-8',
     watch: ['build/**/*.*'],
     showAllHosts: true,
-    encoding: "utf-8",
+		https: {
+      key: './localhost.key',
+      cert: './localhost.cert',
+    }
   });
 
 	return {

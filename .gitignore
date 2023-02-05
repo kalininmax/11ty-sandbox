@@ -1,3 +1,5 @@
+*.cert
+*.key
 node_modules
 build
 build.zip
